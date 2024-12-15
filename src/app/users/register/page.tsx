@@ -25,9 +25,10 @@ export default function Home() {
       .then((res) => {
         console.log(res);
         if (res.data == "User already exists") {
-          setMessage(res.data);
+          setMessage(res.data); // Tampilkan pesan error jika user sudah ada
         } else {
-          router.push("/");
+          setMessage("Registration successful! Redirecting to login...");
+          router.push("/users/login"); // Arahkan ke halaman login
         }
       })
       .catch((err) => {
@@ -57,7 +58,7 @@ export default function Home() {
               onChange={(e) => setRegisterUsername(e.target.value)}
             />
             <input
-              type="text"
+              type="password" // Gunakan type password untuk field password
               className="w-full h-12 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-1"
               placeholder="Password"
               name="password"
@@ -77,8 +78,8 @@ export default function Home() {
               className="flex justify-center text-gray-900 text-base font-medium leading-6"
             >
               {" "}
-              have an account?{" "}
-              <span className="text-indigo-600 font-semibold pl-3"> Login</span>
+              Have an account?{" "}
+              <span className="text-indigo-600 font-semibold pl-3">Login</span>
             </Link>
           </div>
         </div>
