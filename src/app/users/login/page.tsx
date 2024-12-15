@@ -57,7 +57,7 @@ export default function Home() {
               onChange={(e) => setLoginUsername(e.target.value)}
             />
             <input
-              type="text"
+              type="password"
               className="w-full h-12 text-gray-900 placeholder:text-gray-400 text-lg font-normal leading-7 rounded-full border-gray-300 border shadow-sm focus:outline-none px-4 mb-1"
               placeholder="Password"
               name="password"
